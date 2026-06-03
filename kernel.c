@@ -105,50 +105,41 @@ int atoi(char* str) {
     return result;
 }
 void intToString(int num, char* str) {
+    int i = 0;
+    int j;
+    int digit;
+    char temp;
 
-    if (num < 0) {
-        str[0] = '-';
-        num = -num;
-
-        if (num < 10) {
-            str[1] = num + '0';
-            str[2] = 0;
-        }
-        else if (num < 100) {
-            str[1] = (num / 10) + '0';
-            str[2] = (num - ((num / 10) * 10)) + '0';
-            str[3] = 0;
-        }
-        else {
-            str[1] = (num / 100) + '0';
-
-            num = num - ((num / 100) * 100);
-
-            str[2] = (num / 10) + '0';
-            str[3] = (num - ((num / 10) * 10)) + '0';
-            str[4] = 0;
-        }
-
+    if (num == 0) {
+        str[0] = '0';
+        str[1] = 0;
         return;
     }
 
-    if (num < 10) {
-        str[0] = num + '0';
-        str[1] = 0;
+    if (num < 0) {
+        str[i++] = '-';
+        num = -num;
     }
-    else if (num < 100) {
-        str[0] = (num / 10) + '0';
-        str[1] = (num - ((num / 10) * 10)) + '0';
-        str[2] = 0;
+
+    j = i;
+
+    while (num > 0) {
+        digit = num - ((num / 10) * 10);
+        str[i++] = digit + '0';
+        num = num / 10;
     }
-    else {
-        str[0] = (num / 100) + '0';
 
-        num = num - ((num / 100) * 100);
+    str[i] = 0;
 
-        str[1] = (num / 10) + '0';
-        str[2] = (num - ((num / 10) * 10)) + '0';
-        str[3] = 0;
+    i--;
+
+    while (j < i) {
+        temp = str[j];
+        str[j] = str[i];
+        str[i] = temp;
+
+        j++;
+        i--;
     }
 }
 int factorial(int n) {
@@ -296,7 +287,7 @@ else if (startsWith(cmd, "season ")) {
     } else {
         printString("season not found");
     }
-}
+
 }
 else if (startsWith(cmd, "triangle ")) {
 

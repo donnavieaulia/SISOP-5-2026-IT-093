@@ -278,25 +278,25 @@ else if (startsWith(cmd, "fac ")) {
     printString(hasil);
 }
 else if (startsWith(cmd, "season ")) {
-
     if (strcmp(cmd, "season winter")) {
-        printString("12 1 2");
-    }
-    else if (strcmp(cmd, "season spring")) {
-        printString("3 4 5");
-    }
-    else if (strcmp(cmd, "season summer")) {
-        printString("6 7 8");
-    }
-    else if (strcmp(cmd, "season fall")) {
-        printString("9 10 11");
-    }
-    else if (strcmp(cmd, "season radiant")) {
-        printString("all months");
-    }
-    else {
+        color = 0x03;
+        printString("winter mode");
+    } else if (strcmp(cmd, "season spring")) {
+        color = 0x02;
+        printString("spring mode");
+    } else if (strcmp(cmd, "season summer")) {
+        color = 0x0E;
+        printString("summer mode");
+    } else if (strcmp(cmd, "season fall")) {
+        color = 0x05;
+        printString("fall mode");
+    } else if (strcmp(cmd, "season radiant")) {
+        color = 0x0F;
+        printString("radiant mode");
+    } else {
         printString("season not found");
     }
+}
 }
 else if (startsWith(cmd, "triangle ")) {
 

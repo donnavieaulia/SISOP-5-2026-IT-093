@@ -10,7 +10,7 @@ Kelas:B
 
 ## Deskripsi Soal
 
-Pada soal ini, praktikan diminta untuk membangun sebuah mini operating system sederhana berbasis 16-bit yang berjalan di atas emulator **Bochs x86-64**. Sistem ini terdiri dari bootloader (`bootloader.asm`), kernel assembly (`kernel.asm`), dan kernel C (`kernel.c`). Kita hanya perlu mengisi fungsi `_getChar` pada `kernel.asm` dan mengimplementasikan seluruh fitur perintah pada `kernel.c`.
+Pada soal ini, diminta untuk membangun sebuah mini operating system sederhana berbasis 16-bit yang berjalan di atas emulator **Bochs x86-64**. Sistem ini terdiri dari bootloader (`bootloader.asm`), kernel assembly (`kernel.asm`), dan kernel C (`kernel.c`). Kita hanya perlu mengisi fungsi `_getChar` pada `kernel.asm` dan mengimplementasikan seluruh fitur perintah pada `kernel.c`.
 
 Sistem yang dibangun berfungsi layaknya sebuah shell sederhana yang menerima input dari keyboard, memproses perintah, dan menampilkan output pada layar VGA text mode.
 
@@ -53,7 +53,7 @@ chmod +x build.sh
 
 ### 1. `kernel.asm` — Fungsi `_getChar`
 
-Fungsi `_getChar` bertugas membaca satu karakter input dari keyboard menggunakan BIOS interrupt. Fungsi ini dipanggil dari `kernel.c` untuk mendapatkan karakter yang ditekan oleh pengguna.
+Fungsi `_getChar` bertugas membaca satu karakter input dari keyboard menggunakan BIOS interrupt. Fungsi ini dipanggil dari `kernel.c` untuk mendapatkan karakter yang diinput oleh pengguna.
 
 ```asm
 _getChar:
@@ -390,16 +390,5 @@ void main() {
 | Sistem 16-bit memiliki keterbatasan integer sehingga faktorial besar overflow | Menambahkan pengecekan batas nilai `n` sebelum menghitung faktorial |
 | Warna teks tidak berubah setelah perintah `season` | Memastikan variabel global `color` diubah sebelum `printString` dipanggil agar karakter berikutnya menggunakan warna baru |
 
----
 
-## Screenshot
 
-> *(Tambahkan screenshot hasil pengerjaan di sini)*
-
----
-
-## Referensi
-
-- [Modul 5 Sistem Operasi - lab-kcks/Modul-Sisop](https://github.com/lab-kcks/Modul-Sisop/tree/main/Modul-5)
-- [OSDev Wiki - VGA Text Mode](https://wiki.osdev.org/Text_UI)
-- [BIOS Keyboard Services - INT 16H](https://en.wikipedia.org/wiki/INT_16H)

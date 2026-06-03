@@ -264,9 +264,12 @@ else if (startsWith(cmd, "fac ")) {
 
     n = atoi(angka);
 
-    intToString(factorial(n), hasil);
-
-    printString(hasil);
+    if (n > 8) {
+        printString("know your limit little bro.");
+    } else {
+        intToString(factorial(n), hasil);
+        printString(hasil);
+    }
 }
 else if (startsWith(cmd, "season ")) {
     if (strcmp(cmd, "season winter")) {

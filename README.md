@@ -10,7 +10,7 @@ Kelas:B
 
 ## Deskripsi Soal
 
-Pada soal ini, praktikan diminta untuk membangun sebuah mini operating system sederhana berbasis 16-bit yang berjalan di atas emulator **Bochs x86-64**. Sistem ini terdiri dari bootloader (`bootloader.asm`), kernel assembly (`kernel.asm`), dan kernel C (`kernel.c`). Praktikan hanya perlu mengisi fungsi `_getChar` pada `kernel.asm` dan mengimplementasikan seluruh fitur perintah pada `kernel.c`.
+Pada soal ini, praktikan diminta untuk membangun sebuah mini operating system sederhana berbasis 16-bit yang berjalan di atas emulator **Bochs x86-64**. Sistem ini terdiri dari bootloader (`bootloader.asm`), kernel assembly (`kernel.asm`), dan kernel C (`kernel.c`). Kita hanya perlu mengisi fungsi `_getChar` pada `kernel.asm` dan mengimplementasikan seluruh fitur perintah pada `kernel.c`.
 
 Sistem yang dibangun berfungsi layaknya sebuah shell sederhana yang menerima input dari keyboard, memproses perintah, dan menampilkan output pada layar VGA text mode.
 
